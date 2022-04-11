@@ -342,53 +342,6 @@
   <div class="background" style="background-image:url(assets/img/background/img-91.jpg)"></div>
 </section>
 
-<!-- Slide 6 (#27) -->
-<section class="slide fade-6 kenBurns">
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-	   <div class="background" style="background-image:url(assets/img/background/img-27.jpg)"></div>
-<head>
-    <title>Read File Json</title>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
-<script type="text/javascript">
-    $(function(){
-
-        $.get('headline.json',function(obj) {
-
-            var str="<table border=1>";
-
-            str+="<tr><td>No</td><td>Judul Headline</td><td> Topik</td><td> Waktu Publish</td><td> Waktu Scraping</td></tr>";
-
-            $.each(obj,function(n,data) {
-
-                str+="<tr><td>"+(n+1)+"</td>";
-                str+="<td>"+data.judul+"<td>"+data.topik+"<td>"+data.waktu_publish+"<td>"+data.waktu_scraping+"</td></tr>";
-
-
-            });
-
-            str+="</tabel>";
-
-            $('#headline_json').html(str);
-
-        });
-
-    });
-
-</script>
-
-</head>
-<body>
-    <h1> Headline Republika Online </h1>
-
-    <div id="headline_json"></div>
-</body>
-</html>
-</section>
-
 <!-- Panel Bottom #01 -->
 <nav class="panel bottom forceMobileView">
   <div class="sections desktop">
