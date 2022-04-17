@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Selenium Web Scraping</title>
+        <script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+    </head>
+    <body>
+        <h1>Best Games of All Time</h1>
+        <div id = "BestGameOfAllTime_json"></div>
+    </body>
+    <script type = "text/javascript">
+        $(function (){
+            $.get("BestGameOfAllTime.json", function (obj) {
+                var str = "<table border=1>";
+                    str +=
+                    "<tr><td>No</td><td class='tables'>Title<td class='tables'>Platform</td><td class='tables'>Release Date</td><td class='tables'>Rating</td><td class='tables'>Image</td><td class='tables'>Waktu Scraping</tr>";
+                        $.each(obj, function (n, data) {
+                            str += "<td class='tables'>" + data.No + "</td>";
+                            str += "<td class='tables'>" + data.Title + "</td>";
+                            str += "<td class='tables'>" + data.Platform + "</td>";
+                            str += "<td class='tables'>" + data.Release_date + "</td>";
+                            str += "<td class='tables'>" + data.Rating + "</td>";
+                            str += '<td><img src="' + data.Image + '"></td>';
+                            str += "<td class='tables'>" + data.Waktu_scrapping + "</td></tr>";
+
+                        });
+                        str += "</table>";
+                        $("#BestGameOfAllTime_json").html(str);
+                    });
+                });
+                </script>
+                </html>
+            </div>
+        </body>
+        </html>
